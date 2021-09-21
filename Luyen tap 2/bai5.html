@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+    let arr1 = prompt('Nhập vào đi em');
+    let arr2 = prompt('Nhập nữa đi em');
+    let check = true;
+    if (arr1.length !== arr2.length) {
+        check = false;
+    }
+    else {
+        for (let i = 0; i < arr1.length; i++) {
+            if (arr1[i] !== arr2[i]) {
+                check = false;
+                break;
+            }
+        }
+    }
+    if (check === true) {
+        document.write('Hai chuỗi bạn vừa nhập giống nhau')
+    } else {
+        document.write('Hai chuỗi bạn vừa nhập khác nhau')
+    }
+</script>
