@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Caro Game Simple</h3>
+<p id="carogame"> </p>
+<button onclick="changeValueA()">Change Value A</button>
+<button onclick="changeValueB()">Change Value B</button>
+<button onclick="check()">Check win</button>
+</body>
+</html>
+<script>
+    let b = document.getElementById("carogame");
+
+    let board = [];
+    let data = "";
+    for (let i = 0; i < 5; i++) {
+        board[i] = ['.', '.', '.', '.', '.'];
+    }
+
+    for (let i = 0; i < 5; i++) {
+        data += "<br/>";
+        for (let j = 0; j < 5; j++) {
+            data += board[i][j] + "&nbsp;&nbsp;";
+        }
+    }
+    b.innerHTML = data;
+
+    function changeValueA() {
+        let positionX = prompt("X: ");
+        let positionY = prompt("Y: ");
+        data = "";
+        board[positionX][positionY] = "x";
+        for (let i = 0; i < 5; i++) {
+            data += "<br/>";
+            for (let j = 0; j < 5; j++) {
+                data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
+            }
+        }
+        b.innerHTML = data;
+    }
+
+    function changeValueB() {
+        let positionX = prompt("X: ");
+        let positionY = prompt("Y: ");
+        data = "";
+        board[positionX][positionY] = "o";
+        for (let i = 0; i < 5; i++) {
+            data += "<br/>";
+            for (let j = 0; j < 5; j++) {
+                data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
+            }
+        }
+        b.innerHTML = data;
+    }
+
+    function check() {
+        for (let i = 0; i < 5; i++) {
+            for (let j = 0; j <= 2; j++) {
+                if (board[i][j] === 'x' && board[i][j+1] === 'x' && board[i][j+2] === 'x') {
+                    alert('Play A is win!')
+                }
+                if (board[i][j] === 'o' && board[i][j+1] === 'o' && board[i][j+2] === 'o') {
+                    alert('Play B is win!')
+                }
+            }
+        }
+        for (let i = 0; i <= 2; i++) {
+            for (let j = 0; j < 5; j++) {
+                if (board[i][j] === 'x' && board[i+1][j] === 'x' && board[i+2][j] === 'x') {
+                    alert('Play A is win!')
+                }
+                if (board[i][j] === 'o' && board[i+1][j] === 'o' && board[i+2][j] === 'o') {
+                    alert('Play B is win!')
+                }
+            }
+        }
+    }
+
+</script>
