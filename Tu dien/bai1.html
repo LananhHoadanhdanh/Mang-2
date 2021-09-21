@@ -13,9 +13,15 @@
     english = ["Hello", "You're the best", "Who I am?", "I love you"];
     vietNam = ["Chào em", "Bạn là nhất, nhất bạn rồi.", "M có biết b m là ai không?", "Thương em"];
     let phrase = prompt('Nhập đê em!');
+    let check = false;
     for (let i = 0; i < english.length; i++) {
-        if (phrase == english[i]) {
-            alert(vietNam[i])
+        if (phrase === english[i]) {
+            check = true;
+            alert(vietNam[i]);
+            break;
         }
+    }
+    if (check === false) {
+        alert('Không tìm thấy!')
     }
 </script>
