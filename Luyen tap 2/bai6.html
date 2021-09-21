@@ -10,11 +10,13 @@
 </html>
 
 <script>
-    let arr = prompt('Nhập vào đi em');
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] === 'a') {
-            arr[i] = 'b'
+    let arr = prompt('Nhập chuỗi please!');
+    let newArr = arr.split('');
+    for (let i = 0; i < newArr.length; i++){
+        if (newArr[i] === '-') {
+            newArr[i] = '_';
         }
     }
-    document.write(arr)
+    alert(newArr.join(''))
+
 </script>
